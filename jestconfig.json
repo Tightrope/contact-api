@@ -1,0 +1,23 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": "test",
+  "testRegex": ".spec.ts(x?)$",
+  "transform": {
+    "^.+\\.ts$": "ts-jest"
+  },
+  "collectCoverageFrom": [
+    "**/*.{ts,tsx}"
+  ],
+  "moduleNameMapper": {
+    "~/(.*)$": "<rootDir>/$1",
+    "^csv-parse/sync": "<rootDir>/../node_modules/csv-parse/dist/cjs/sync.cjs"
+  },
+  "coverageDirectory": "../coverage",
+  "testEnvironment": "jsdom",
+  "resetMocks": true,
+  "verbose": false
+}

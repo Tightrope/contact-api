@@ -1,0 +1,11 @@
+{
+  "extends": "@tsconfig/node14/tsconfig.json",
+  "compilerOptions": {
+    "lib": ["es2020", "dom"],
+    "outDir": "./dist-test/",
+    "watch": false
+  },
+  "include": [
+    "test/**/*.ts"
+  ]
+}

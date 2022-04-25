@@ -1,0 +1,30 @@
+# JetBrains .gitignore
+# See also https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# AWS User-specific
+.idea/**/aws.xml
+
+# Generated files
+.idea/**/contentModel.xml
+
+# ------------------------------
+# --- User specific settings ---
+# ------------------------------
+
+# Retain JetBrains IDE shared runtinme configs
+!/.idea/runConfigurations
+
+# Generated project files
+node_modules/
+coverage/
+dist/
+.DS_Store
+
+

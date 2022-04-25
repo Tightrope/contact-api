@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ContactsRepository.get all contacts returns 10 contacts" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
+    <config-file value="$PROJECT_DIR$/jestconfig.json" />
+    <node-interpreter value="project" />
+    <node-options value="" />
+    <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+    <working-dir value="$PROJECT_DIR$" />
+    <envs />
+    <scope-kind value="TEST" />
+    <test-file value="$PROJECT_DIR$/test/unit/repositories/ContactRepository.spec.ts" />
+    <test-names>
+      <test-name value="ContactsRepository" />
+      <test-name value="get all contacts returns 10 contacts" />
+    </test-names>
+    <method v="2" />
+  </configuration>
+</component>
