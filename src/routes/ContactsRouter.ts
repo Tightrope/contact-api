@@ -5,7 +5,7 @@ const contactsRouter = Router();
 const contactsRepo = new ContactsRepository("/Users/dcox/Development/Express/contact-api/src/data/mock-data.csv");
 
 contactsRouter.get("/", (req, res) => {
-    contactsRepo.getContacts().then  (contacts => {
+    contactsRepo.getAllContacts().then  (contacts => {
         res.json(contacts);
     });
 });
