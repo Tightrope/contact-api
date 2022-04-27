@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "build": "tsc --build",
+    "build": "tsc --build && mkdir ./dist/data && cp ./src/data/mock-data.csv ./dist/data/mock-data.csv",
     "clean": "rm -rf ./dist && rm -rf ./node_modules && rm -rf ./coverage",
     "test": "jest --config ./jestconfig.json"
   },

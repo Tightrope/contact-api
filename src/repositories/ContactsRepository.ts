@@ -11,31 +11,32 @@ export class ContactsRepository {
         fs.accessSync(this.csvFilePath, fs.constants.R_OK);
     }
 
-    public getAllContacts(): Contact[] {
+    public async getAllContacts(): Promise<Contact[]> {
         if (this.contacts.length > 0) {
-            return this.contacts;
+            return Promise.resolve(this.contacts);
         } else {
             try {
-                this.contacts = this.readCSVFile(this.csvFilePath);
+                this.contacts = ContactsRepository.readCSVFile(this.csvFilePath);
                 if (this.contacts.length > 0) {
-                    return this.contacts;
+                    return Promise.resolve(this.contacts);
                 } else {
-                    throw new Error("No contacts found");
+                    return Promise.reject(new Error("No contacts found"));
                 }
             } catch (err: any) {
                 console.error(err);
-                throw new Error("Failed to read contacts from csv file")
+                return Promise.reject(new Error("Failed to read contacts from csv file"));
             }
         }
     };
 
 
-    public getContactById(id: number): Contact | undefined {
-        const contacts = this.getAllContacts();
-        return contacts.find(contact => contact.id === id);
+    public async getContactById(id: number): Promise<Contact | undefined> {
+        const contacts = await this.getAllContacts();
+        const contactWithId = contacts.find(contact => contact.id === id)
+        return Promise.resolve(contactWithId);
     }
 
-    private readCSVFile(csvFilePath: string): Contact[] {
+    private static readCSVFile(csvFilePath: string): Contact[] {
         const contacts: Contact[] = [];
         const csvFile = fs.readFileSync(csvFilePath, {encoding: 'utf8'});
 
