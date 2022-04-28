@@ -2,6 +2,8 @@ import e = require('express');
 import {Express, Router} from 'express';
 import {contactsRouter} from "./routes/ContactsRouter";
 
+process.title = 'contact-api';
+
 const app:Express = e();
 app.use('/contacts', contactsRouter)
 

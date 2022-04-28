@@ -2,7 +2,7 @@ import {Router} from "express";
 import {ContactsRepository} from "../repositories/ContactsRepository";
 
 const contactsRouter = Router();
-const contactsCSVFilePath = process.env.csvFilePath ??  process.cwd() + './data/mock-data.csv';
+const contactsCSVFilePath = process.env.csvFilePath ??  './src/data/mock-data.csv';
 const contactsRepo = new ContactsRepository(contactsCSVFilePath);
 
 contactsRouter.get("/", (req, res) => {
